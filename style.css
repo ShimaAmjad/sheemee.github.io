@@ -63,3 +63,23 @@ nav a {
   font-weight: 500;
   text-transform: lowercase;
 }
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo {
+  color: #fefae0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  text-transform: lowercase;
+  animation: fadeSlideUp 1.5s ease-out;
+}
