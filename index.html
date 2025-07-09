@@ -100,13 +100,33 @@
 <script>
   const clickSound = new Audio('sounds/mixkit-mouse-click-close-1113.wav');
 
+  const sections = {
+    "About": document.getElementById("about-section"),
+    "Portfolio": null
+    "Contact": null
+  };
+
   document.querySelectorAll('.menu-item').forEach(item => {
     item.addEventListener('click', () => {
       clickSound.currentTime = 0;
       clickSound.play();
+
+      for (let key in sections) {
+        if (sections[key]) {
+          sections[key].style.display = 'none';
+        }
+      }
+
+      const text = item.textContent;
+      for (let key in sections) {
+        if (text.includes(key) && sections[key]) {
+          sections[key].style.display = 'block';
+        }
+      }
     });
   });
 </script>
+
 
 </body>
 </html>
